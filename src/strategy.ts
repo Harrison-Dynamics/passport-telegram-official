@@ -139,7 +139,7 @@ export default class TelegramStrategy extends Strategy {
 
     const sorted = Object.keys(query).sort();
     const mapped = sorted // Everything except hash must be mapped
-     .filter(d => d !== 'hash')
+     .filter(d => d !== 'hash' && d !== 'state')
      .map(key => `${key}=${query[key]}`);
 
     const hashString = mapped.join('\n');
